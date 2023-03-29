@@ -1,4 +1,4 @@
 # 屏蔽配置文件和编译输出文件
-**/.idea:
-**/cmake-build-debug:
+*/.idea
+*/cmake-build-debug
 *.txt
