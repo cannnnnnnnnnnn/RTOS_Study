@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="TaskCreateAndDelete"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TaskCreateAndDelete.elf">
+				<Option output="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/TaskCreateAndDelete.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32G474xx"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Inc"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 TaskCreateAndDelete.elf"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TaskCreateAndDelete.elf/fast">
+				<Option output="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/TaskCreateAndDelete.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32G474xx"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Inc"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Device/ST/STM32G4xx/Include"/>
+					<Add directory="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="d:\clion_stm32\stm32cude\gun-arm-embedded\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 TaskCreateAndDelete.elf/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Inc/gpio.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Inc/main.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Inc/stm32g4xx_hal_conf.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Inc/stm32g4xx_it.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Inc/usart.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/gpio.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/main.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/stm32g4xx_hal_msp.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/stm32g4xx_it.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/syscalls.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/sysmem.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/system_stm32g4xx.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Src/usart.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Core/Startup/startup_stm32g474retx.s">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g474xx.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Device/ST/STM32G4xx/LICENSE.txt">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/cmsis_armcc.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/cmsis_armclang.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/cmsis_armclang_ltm.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/cmsis_compiler.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/cmsis_gcc.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/cmsis_iccarm.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/cmsis_version.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_armv81mml.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_armv8mbl.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_armv8mml.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm0.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm0plus.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm1.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm23.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm3.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm33.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm35p.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm4.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_cm7.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_sc000.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/core_sc300.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/mpu_armv7.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/mpu_armv8.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/Include/tz_context.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/CMSIS/LICENSE.txt">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_bus.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_cortex.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_crs.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dma.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_dmamux.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_exti.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_gpio.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_lpuart.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_pwr.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_rcc.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_system.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_usart.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_utils.h">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/LICENSE.txt">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/STM32G474RETX_FLASH.ld">
+			<Option target="TaskCreateAndDelete.elf"/>
+		</Unit>
+		<Unit filename="D:/Clion_STM32/CLionProjects/OS/RTOS_Study/TaskCreateAndDelete/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
