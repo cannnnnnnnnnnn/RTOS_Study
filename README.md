@@ -7,3 +7,4 @@
 1. Task的创建与删除，[readme](./TaskCreateAndDelete/readme.md)
 2. Task的挂起与恢复，[readme](./TaskSuspendAndResume/readme.md)
 3. Task在中断中调用API函数，[readme](./InterruptManagement/readme.md)
+4. 临界代码保护与任务调度器的挂起与恢复，[readme](./CriticalProtection/readme.md)
