@@ -22,6 +22,8 @@
 #include "stm32g4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "FreeRTOS.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,10 +57,14 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
-
+// 任务句柄
+extern TaskHandle_t taskHandle1;
+extern TaskHandle_t taskHandle2;
+extern TaskHandle_t taskHandle3;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -185,6 +191,25 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM6 global interrupt, DAC1 and DAC3 channel underrun error interrupts.
+  */
+void TIM6_DAC_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM6_DAC_IRQn 0 */
+    static uint8_t i = 1;
+  /* USER CODE END TIM6_DAC_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim6);
+  /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
+    HAL_GPIO_TogglePin(LD2_GPIO_Port,LD2_Pin);
+    if (i++%12  == 0){
+        // 恢复线程
+        xTaskResumeFromISR(taskHandle2);
+        i = 1;
+    }
+  /* USER CODE END TIM6_DAC_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
