@@ -45,7 +45,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+// 任务句柄
+TaskHandle_t taskHandle1;
+TaskHandle_t taskHandle2;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -57,7 +59,9 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
+void Task1(void *pvParameters);
 
+void Task2(void *pvParameters);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -96,6 +100,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+    xTaskCreate(Task1,"task1",128,NULL,osPriorityLow,&taskHandle1);
+    xTaskCreate(Task2,"task2",128,NULL,osPriorityLow,&taskHandle2);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -125,6 +131,23 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+// 任务列表
+void Task1(void *pvParameters) {
+    while (1){
+        portENTER_CRITICAL();
+        printf("Task1 run\n");
+        portEXIT_CRITICAL();
+        vTaskDelay(500);
+    }
+}
 
+void Task2(void *pvParameters) {
+    while (1){
+        portENTER_CRITICAL();
+        printf("Task2 run\n");
+        portEXIT_CRITICAL();
+        vTaskDelay(500);
+    }
+}
 /* USER CODE END Application */
 
