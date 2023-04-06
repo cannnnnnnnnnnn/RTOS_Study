@@ -26,6 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+// 添加队列消息
+#include "queue.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,6 +47,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+// 创建句柄
+TaskHandle_t taskHandle1;
+TaskHandle_t taskHandle2;
+// 创建任务队列
+QueueHandle_t xQueue;   // 队列句柄
 
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -57,7 +64,8 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+void Task1(void *pvParameters);
+void Task2(void *pvParameters);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -105,6 +113,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  // 初始化长度为1的队列
+    xQueue = xQueueCreate(1,sizeof(uint8_t));
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -113,6 +123,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+    xTaskCreate(Task1,"task1",300,NULL,osPriorityLow,&taskHandle1);
+    xTaskCreate(Task2,"task2",300,NULL,osPriorityLow,&taskHandle2);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -143,6 +155,31 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void Task1(void *pvParameters) {
+    uint8_t key = 1;
+    while (1){
+        // 发送消息，一直等到消息队列有空之后添加队列消息
+        xQueueSend(xQueue,&key,portMAX_DELAY);
+        vTaskDelay(3000);
+    }
+}
 
+void Task2(void *pvParameters) {
+    uint8_t queue_recv = 0;
+    while (1){
+        xQueueReceive(xQueue,&queue_recv,portMAX_DELAY);
+        switch (queue_recv) {
+            case 1:
+                printf("Receive info\n");
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+//void Task3(void *pvParameters){
+//
+//}
 /* USER CODE END Application */
 
