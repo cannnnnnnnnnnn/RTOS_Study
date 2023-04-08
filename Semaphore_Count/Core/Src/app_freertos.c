@@ -26,6 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+#include "semphr.h"
+#include "queue.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +47,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+// 任务句柄
+TaskHandle_t taskHandle1;
+TaskHandle_t taskHandle2;
+// 计数量句柄
+QueueHandle_t count_semphore_handle;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -57,7 +63,8 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+void Task1(void *pvParameters);
+void Task2(void *pvParameters);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -80,6 +87,11 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
+  // 创建计数型信号量
+  count_semphore_handle = xSemaphoreCreateCounting(100,0);
+    if (count_semphore_handle != NULL){
+        printf("计数型信号量创建成功！\n");
+    }
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -96,6 +108,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+    xTaskCreate(Task1,"task1",200,NULL,osPriorityLow,&taskHandle1);
+    xTaskCreate(Task2,"task2",200,NULL,osPriorityLow,&taskHandle2);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -125,6 +139,27 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-
+void Task1(void *pvParameters) {
+    // 任务一:定时释放信号量
+    while (1){
+        if (count_semphore_handle != NULL){
+            // 释放信号量（计数值+1）
+            xSemaphoreGive(count_semphore_handle);
+        }
+        vTaskDelay(300);
+    }
+}
+void Task2(void *pvParameters) {
+    // 任务二:定时获取计数型信号量的数量并提示打印
+    BaseType_t err;
+    while (1){
+        err = xSemaphoreTake(count_semphore_handle,portMAX_DELAY);  // 获取信号量（计数值-1）
+        if (err == pdTRUE){
+            // 获取信号量的值
+            printf("信号量的计数值为：%d\r\n",(int)uxSemaphoreGetCount(count_semphore_handle));
+        }
+        vTaskDelay(1000);
+    }
+}
 /* USER CODE END Application */
 
