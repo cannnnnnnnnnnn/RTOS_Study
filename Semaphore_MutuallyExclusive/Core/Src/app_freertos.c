@@ -26,6 +26,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+#include "queue.h"
+#include "semphr.h"
+#include "stdlib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +48,12 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+// 创建任务句柄
+TaskHandle_t taskHandle1;
+TaskHandle_t taskHandle2;
+TaskHandle_t taskHandle3;
+// 信号量
+QueueHandle_t mutex_semphore_handle;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -57,7 +65,9 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+void low_task(void *pvParameters);
+void middle_task(void *pvParameters);
+void high_task(void *pvParameters);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -80,6 +90,11 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
+    mutex_semphore_handle = xSemaphoreCreateMutex();    /* 创建互斥信号量，并且主动释放一次信号量 */
+    if(mutex_semphore_handle != NULL)
+    {
+        printf("互斥信号量创建成功！！！\r\n");
+    }
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -96,6 +111,9 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+    xTaskCreate(low_task,"low_task",200,NULL,osPriorityLow,&taskHandle1);
+    xTaskCreate(middle_task,"middle_task",200,NULL,osPriorityLow1,&taskHandle2);
+    xTaskCreate(high_task,"high_task",200,NULL,osPriorityLow2,&taskHandle3);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -125,6 +143,36 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void low_task(void *pvParameters) {
+    while (1){
+        printf("low_task获取信号量\n");
+        xSemaphoreTake(mutex_semphore_handle,portMAX_DELAY);
+        printf("low_task正在运行\n");
+        HAL_Delay(3000);
+        printf("low_task释放信号量\n");
+        xSemaphoreGive(mutex_semphore_handle);
+        vTaskDelay(1000);
+    }
+}
 
+void middle_task(void *pvParameters) {
+    while (1){
+        printf("middle_task正在运行\n");
+        vTaskDelay(1000);
+    }
+}
+
+void high_task(void *pvParameters) {
+    while (1){
+        printf("high_task获取信号量\n");
+        xSemaphoreTake(mutex_semphore_handle,portMAX_DELAY);
+        printf("high_task正在运行\n");
+        HAL_Delay(1000);
+        printf("high_task释放信号量\n");
+        xSemaphoreGive(mutex_semphore_handle);
+        vTaskDelay(1000);
+
+    }
+}
 /* USER CODE END Application */
 
