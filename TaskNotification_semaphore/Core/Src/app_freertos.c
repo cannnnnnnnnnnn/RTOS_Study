@@ -45,7 +45,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+// 创建任务句柄
+TaskHandle_t taskHandle1;
+TaskHandle_t taskHandle2;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -57,7 +59,9 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+// 任务函数声明
+void Task1(void *pvParameters);
+void Task2(void *pvParameters);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -96,6 +100,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+    xTaskCreate(Task1,"task1",500,NULL,osPriorityLow,&taskHandle1);
+    xTaskCreate(Task2,"task2",500,NULL,osPriorityLow,&taskHandle2);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -125,6 +131,22 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void Task1(void *pvParameters) {
+    while (1){
+        printf("任务通知模拟二值信号量释放！\r\n");
+        xTaskNotifyGive(taskHandle2);
+        vTaskDelay(1000);
+    }
+}
 
+void Task2(void *pvParameters) {
+    uint32_t rev = 0;
+    while (1){
+        rev = ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        if (rev != 0){
+            printf("接收任务通知成功，模拟获取二值信号量！\r\n");
+        }
+    }
+}
 /* USER CODE END Application */
 
