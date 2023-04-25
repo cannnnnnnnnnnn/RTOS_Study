@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +45,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+// 创建任务句柄
+TaskHandle_t taskHandle1;
+TaskHandle_t taskHandle2;
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -57,7 +59,9 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+// 任务声明
+void Task1(void *pvParameters);
+void Task2(void *pvParameters);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -96,6 +100,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+    xTaskCreate(Task1,"task1",500,NULL,osPriorityLow,&taskHandle1);
+    xTaskCreate(Task2,"task2",500,NULL,osPriorityLow,&taskHandle2);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -125,6 +131,37 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void Task1(void *pvParameters) {
+    uint8_t key = 2;
+    while (1){
+        if (taskHandle2 != NULL){
+            printf("任务通知模拟消息邮箱发送，发送的键值为：%d\r\n",key);
+            xTaskNotify( taskHandle2, key, eSetValueWithOverwrite );
+        }
+        vTaskDelay(1000);
+    }
+}
+
+void Task2(void *pvParameters) {
+    uint32_t notify_val = 0;
+    while (1){
+        xTaskNotifyWait(0, 0xFFFFFFFF, &notify_val, portMAX_DELAY );
+        switch(notify_val)
+        {
+            case 1:
+            {
+                printf("接收到的通知值为：%d\r\n",notify_val);
+                break;
+            }
+            case 2:
+            {
+                printf("接收到的通知值为：%d\r\n",notify_val);
+                break;
+            }
+            default : break;
+        }
+    }
+}
 
 /* USER CODE END Application */
 
