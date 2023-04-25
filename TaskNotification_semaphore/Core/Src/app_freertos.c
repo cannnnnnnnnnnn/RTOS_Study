@@ -132,20 +132,34 @@ void StartDefaultTask(void *argument)
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 void Task1(void *pvParameters) {
+//    while (1){
+//        printf("任务通知模拟二值信号量释放！\r\n");
+//        xTaskNotifyGive(taskHandle2);
+//        vTaskDelay(1000);
+//    }
+
     while (1){
-        printf("任务通知模拟二值信号量释放！\r\n");
+        printf("任务通知模拟计数型信号量释放！\r\n");
         xTaskNotifyGive(taskHandle2);
-        vTaskDelay(1000);
+        vTaskDelay(500);
     }
 }
 
 void Task2(void *pvParameters) {
     uint32_t rev = 0;
+//    while (1){
+//        rev = ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+//        if (rev != 0){
+//            printf("接收任务通知成功，模拟获取二值信号量！\r\n");
+//        }
+//    }
+
     while (1){
-        rev = ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        rev = ulTaskNotifyTake(pdFALSE, portMAX_DELAY);
         if (rev != 0){
-            printf("接收任务通知成功，模拟获取二值信号量！\r\n");
+            printf("rev:%d\n",rev);
         }
+        vTaskDelay(1000);
     }
 }
 /* USER CODE END Application */
