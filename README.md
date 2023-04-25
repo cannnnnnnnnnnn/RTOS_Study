@@ -11,3 +11,4 @@
 5. 列表和列表项，[readme](./ListAndListItem/readme.md)
 6. 任务状态查询API函数，[readme](./APIFunction/readme.md)
 7. 队列集，[readme](./QueueSet/readme.md)
+8. 事件标志组，[readme](./EventFlagGroup/README.md)
