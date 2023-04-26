@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+#include "timers.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,7 +46,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+// 创建任务句柄
+TaskHandle_t taskHandle1;
+// 创建软件定时器句柄
+TimerHandle_t timerHandle1 = 0;         // 单次定时器
+TimerHandle_t timerHandle2 = 0;         // 周期定时器
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -57,7 +62,11 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+// 任务函数
+void Task1(void *pvParameters);
+// 定时器回调函数
+void Timer1_callback( TimerHandle_t pxTimer);
+void Timer2_callback( TimerHandle_t pxTimer);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -84,6 +93,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+  timerHandle1 = xTimerCreate("timer1",500,pdFALSE,(void *)1,Timer1_callback);
+  timerHandle2 = xTimerCreate("timer2",2000,pdTRUE,(void *)2,Timer2_callback);
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -96,6 +107,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+    xTaskCreate(Task1,"task1",500,NULL,osPriorityLow,&taskHandle1);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -125,6 +137,22 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void Task1(void *pvParameters){
+    xTimerStart(timerHandle1,portMAX_DELAY);
+    xTimerStart(timerHandle2,portMAX_DELAY);
+    while (1){
+        vTaskDelay(500);
+    }
+}
 
+void Timer1_callback( TimerHandle_t pxTimer) {
+    static uint32_t timer = 0;
+    printf("timer1的运行次数：%d\r\n",++timer);
+}
+
+void Timer2_callback( TimerHandle_t pxTimer) {
+    static uint32_t timer = 0;
+    printf("timer2的运行次数：%d\r\n",++timer);
+}
 /* USER CODE END Application */
 
